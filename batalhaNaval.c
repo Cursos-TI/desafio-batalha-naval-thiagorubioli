@@ -22,13 +22,13 @@ int main () {
     };
 
     // Imprimindo a linha de letras (cabeçalho das colunas "A" até "J")
-    printf(" ");
+    printf("  ");
     for (int i = 0; i < 10; i++) {
         printf(" %c", letras[i]);
     }
 
     printf("\n");
-        
+      
     // Acessando e imprimindo o restante dos elementos da matriz (tabuleiro e navios)
     for (int i = 0; i < 10; i++) {
         for (int j = 0; j < 11; j++) {
@@ -42,7 +42,13 @@ int main () {
 
             } else
             {
-                printf("%d ", tabuleiro[i][j]); // Imprimindo o restante do tabuleiro com água ("0")
+                if (i < 9 && j == 0)
+                {
+                    printf(" %d ", tabuleiro[i][j]); // Imprimindo o restante do tabuleiro com um espaço adicional antes das linhas 1-9
+                } else
+                {
+                    printf("%d ", tabuleiro[i][j]); // Imprimindo a linha 10 sem espaço adicional para regularizar o tabuleiro
+                }
             }
         }
         printf("\n");
